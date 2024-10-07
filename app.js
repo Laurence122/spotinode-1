@@ -24,7 +24,7 @@ app.get('/song/:id', (req, res) => {
   res.render('songDetails', { song });
 });
 
-app.listen(4050, () => {
-    console.log('server running pn http://localhost:7000');
+app.listen(4070, () => {
+    console.log('server running pn http://localhost:4070');
   });
   

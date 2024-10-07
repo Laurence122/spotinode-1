@@ -6,80 +6,93 @@
     <title>Edit Song</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #d59eb1; 
-            color: #333; 
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; 
+            color: #FFFFFF; 
             margin: 0;
-            padding: 80px;
+            padding: 0;
             display: flex;
-            align-items: center; /* Center items vertically */
-            justify-content: center; /* Center items horizontally */
-            height: 100vh; /* Full height */
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
         }
 
         .container {
-            max-width: 500px; /* Box width */
-            padding: 20px;
-            background: #444; /* Darker box background */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-            text-align: center; /* Center text */
+            max-width: 500px; 
+            padding: 30px;
+            background: #1C1C1C; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+            text-align: center; 
         }
 
         h1 {
-            color: #d59eb1; 
-            margin-bottom: 20px; /* Space below the heading */
+            color: #1DB954; 
+            margin-bottom: 20px; 
+            font-size: 2em;
         }
 
         input[type="text"],
         textarea,
         input[type="file"] {
-            width: 100%; /* Full width input */
-            padding: 10px; /* Padding inside inputs */
-            margin: 10px 0; /* Space between inputs */
-            border: 1px solid #888; /* Light gray border */
-            border-radius: 4px; /* Rounded corners */
-            box-sizing: border-box; /* Include padding in width */
-            background: #555; /* Darker background for inputs */
-            color: white; /* White text color */
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #555; 
+            border-radius: 5px; 
+            background: #282828; 
+            color: white; 
+            box-sizing: border-box; 
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #B3B3B3; 
         }
 
         button {
-            background-color: #d59eb1; /* Button color */
-            color: white; /* Text color */
-            padding: 10px; /* Padding for button */
-            border: none; /* Remove border */
-            border-radius: 4px; /* Rounded corners for button */
-            cursor: pointer; /* Pointer cursor */
-            font-size: 16px; /* Larger text for button */
-            width: 100%; /* Full width button */
+            background-color: #1DB954; 
+            color: white; 
+            padding: 12px; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold; 
+            width: 100%; 
+            margin-top: 15px; 
+            transition: background-color 0.3s ease; 
         }
 
         button:hover {
-            background-color: #d59eb1; /* Darker green on hover */
+            background-color: #1ED760; 
         }
 
         .back-link {
-            display: block; /* Block element for link */
-            margin-top: 15px; /* Space above link */
-            color: #d59eb1; /* Green color for link */
-            text-decoration: none; /* Remove underline */
-            font-weight: bold; /* Bold link text */
+            display: block; 
+            margin-top: 20px; 
+            color: #1DB954; 
+            text-decoration: none; 
+            font-weight: bold; 
         }
 
         .back-link:hover {
-            text-decoration: underline; /* Underline on hover */
+            text-decoration: underline; 
         }
 
         textarea {
-            height: 100px; /* Fixed height for lyrics */
-            resize: none; /* Disable resizing */
+            height: 120px; 
+            resize: none; 
         }
 
-        /* Style for audio player */
+        img {
+            width: 100px; 
+            border-radius: 8px; 
+            margin-bottom: 10px;
+        }
+
         audio {
-            margin: 10px 0; /* Space around audio player */
-            width: 100%; /* Full width audio player */
+            margin: 10px 0; 
+            width: 100%; 
         }
     </style>
 </head>
@@ -91,7 +104,7 @@
             <input type="text" name="artist" value="<%= song.artist %>" placeholder="Artist" required>
             <textarea name="lyrics" placeholder="Lyrics"><%= song.lyrics %></textarea>
             
-            <img src="<%= song.image %>" alt="<%= song.title %>" style="width:100px; border-radius: 4px; margin-bottom: 10px;">
+            <img src="<%= song.image %>" alt="<%= song.title %>">
             <input type="file" name="imageFile" accept="image/*">
             <input type="hidden" name="oldImage" value="<%= song.image %>">
         

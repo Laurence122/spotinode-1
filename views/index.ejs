@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Playlist</title>
+    <title>Playlist</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>My Playlist</h1>
+    <h1>LauPlaylist</h1>
     
-    <!-- Button to Add New Song -->
     <a href="/add" class="add-song-button">Add New Song</a>
 
     <div class="song-container">
@@ -22,12 +21,11 @@
           </div>
           <div class="song-info">
               <h2><a href="/song/<%= song.id %>"><%= song.title %></a></h2>
-              <p>by <%= song.artist %></p> <!-- Moved artist under title -->
+              <p>by <%= song.artist %></p>
               <audio controls>
                   <source src="<%= song.file_path %>" type="audio/mpeg">
                   Your browser does not support the audio tag.
               </audio>
-              <!-- Removed lyrics display -->
           </div>
           <div class="song-options">
               <form action="/edit/<%= song.id %>" method="GET">
@@ -39,13 +37,13 @@
           </div>
       </div>
       <% }); %>
-  </div>
+    </div>
   
     <script>
         function openSongModal(title, artist, lyrics, filePath, image) {
             document.getElementById('modal-song-title').innerText = title;
             document.getElementById('modal-song-artist').innerText = 'by ' + artist;
-            document.getElementById('modal-song-lyrics').innerText = lyrics; // Lyrics can be used in modal
+            document.getElementById('modal-song-lyrics').innerText = lyrics;
             document.getElementById('modal-song-source').src = filePath;
             document.getElementById('modal-song-audio').load();
             document.getElementById('song-modal').style.display = 'block';
@@ -55,7 +53,6 @@
             document.getElementById('song-modal').style.display = 'none';
         }
 
-        // Close the modal when clicking outside of it
         window.onclick = function(event) {
             const modal = document.getElementById('song-modal');
             if (event.target == modal) {
